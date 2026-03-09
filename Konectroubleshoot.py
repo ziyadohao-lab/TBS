@@ -43,6 +43,9 @@ if st.session_state.code is not None:
     elif code == 8000000:
         st.write("Pending, waiting for update")
 
+    elif code == 9999999:
+        st.write("Done！")
+
     if st.button("Restart"):
         st.session_state.step = 0
         st.session_state.code = None
@@ -182,7 +185,8 @@ elif st.session_state.step == 6:
     col1, col2, col3 = st.columns(3)
 
     if col1.button("Yes"):
-        st.success("Done")
+        st.session_state.code = 9999999
+        st.rerun()
 
     if col2.button("No"):
         st.session_state.code = 9110011
@@ -264,6 +268,7 @@ elif st.session_state.step == 300:
 elif st.session_state.step == 400:
         st.session_state.code = 8000000
         st.rerun()
+
 
 
 
