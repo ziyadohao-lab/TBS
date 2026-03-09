@@ -41,7 +41,7 @@ if st.session_state.code is not None:
         st.write("Please open the breaker")
 
     elif code == 8000100:
-        st.write("Pending")
+        st.write("Pending, waiting for update")
 
     if st.button("Restart"):
         st.session_state.step = 0
@@ -264,4 +264,5 @@ elif st.session_state.step == 300:
 elif st.session_state.step == 400:
         st.session_state.code = 8001000
         st.rerun()
+
 
