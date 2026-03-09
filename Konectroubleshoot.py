@@ -61,7 +61,7 @@ if st.session_state.step == 0:
     st.subheader("Select the problematic device")
     st.write("Which device?")
 
-    col1, col2, col3, col4, col5 = st.columns(2)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     if col1.button("Switch"):
         next_step(1)
@@ -264,3 +264,4 @@ elif st.session_state.step == 300:
 elif st.session_state.step == 400:
         st.session_state.code = 8001000
         st.rerun()
+
